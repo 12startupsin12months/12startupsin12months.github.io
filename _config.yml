@@ -22,7 +22,7 @@ url: "http://blog.12startupsin12months.in" # the base hostname & protocol for yo
 twitter_username: 12s12m
 github_username:  12startupsin12months
 
-permalink: "/:year/:month/:day/:title/"
+permalink: /:year/:month/:day/:title/
 
 # Build settings
 markdown: kramdown
