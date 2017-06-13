@@ -22,6 +22,8 @@ url: "http://blog.12startupsin12months.in" # the base hostname & protocol for yo
 twitter_username: 12startupsin12months
 github_username:  12startupsin12months
 
+permalink: pretty
+
 # Build settings
 markdown: kramdown
 theme: minima
