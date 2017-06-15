@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Hello, World!"
+title:  "Day 1: Hello, World!"
 date:   2017-06-13 22:49:00 +0530
 categories: hello world
 ---

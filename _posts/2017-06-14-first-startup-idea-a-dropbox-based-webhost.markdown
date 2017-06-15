@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "First startup idea! A dropbox based webhost."
+title:  "Day 2: First startup idea! A dropbox based webhost."
 date:   2017-06-14 22:49:00 +0530
 categories:
   - idea
