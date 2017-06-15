@@ -2,6 +2,8 @@
 layout: post
 title:  "Day 2: First startup idea! A dropbox based webhost."
 date:   2017-06-14 22:49:00 +0530
+published: true
+canonical_url: http://blog.12startupsin12months.in/2017/06/14/first-startup-idea-a-dropbox-based-webhost/
 categories:
   - idea
   - dropbox
