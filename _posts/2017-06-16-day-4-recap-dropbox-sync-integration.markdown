@@ -3,6 +3,7 @@ layout: post
 title:  "Day 4: Dropbox sync woes and CI setup"
 date:   2017-06-16
 published: true
+canonical_url: http://blog.12startupsin12months.in/2017/06/16/day-4-recap-dropbox-sync-integration/
 categories:
   - recap
 ---
