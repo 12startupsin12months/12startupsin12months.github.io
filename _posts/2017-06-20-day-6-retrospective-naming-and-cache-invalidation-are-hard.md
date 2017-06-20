@@ -1,115 +1,21 @@
 ---
 layout: post
-title:  "Day 5: First working prototype of the webserver"
-date:   2017-06-19
+title:  "Day 6: Retrospective, Naming and Cache Invalidation"
+date:   2017-06-20
 published: true
 categories:
   - Elixir
   - Retrospective
-  - Webserver
-  - Cowboy
-  - Cache
-  - danny
+  - Cache invalidation
+  - sprymesh.com
 ---
 
-Erlang/Elixir make it too easy to build industry grade webservers. There are so many pieces of erlang code that
-make writing robust and highly performant code a piece of cake.
+Today, was a good day! It was frustrating, but ended up fine :)
 
-Today, I wrote a simple resource webserver which serves the web pages for danny. The objectives of this
-webserver were:
+![Today was a good day](/assets/today-was-a-good-day.jpg)
 
-  1. Use caching to do very quick url lookups and fallback to the DB if the cache is not filled yet.
-  2. Be performant while serving web pages.
+The software industry often jokes about two of the most difficult things in software. Cache invalidation, Naming things and off by one errors :). I ended up doing two of those things and spent a good 2 hours on an undocumented ecto way of updating embedded data. And in the process creating my first contribution in the form of [documentation to Ecto](https://github.com/elixir-ecto/ecto/commit/9962c146c0569a91eda189e328a7d02382d9bcc7).
 
-## 1. Caching
+Finding a good name which is available as a dot com and which isn't used by yet is a really hard one. Thankfully, the thesaurus, Google, and https://domainr.com/ helped me narrow down the name of my new app to *[sprymesh.com](https://sprymesh.com/)*. I can't believe it was still available :D, Anyhoo, I don't think names are that big of a deal when it comes to the success of a product. However, it is a good feeling to have a good name :). [sprymesh.com](https://sprymesh.com) is going to be the new home for the Dropbox sync backed web host that I am building. I have a pre alpha version of the app deployed. You can try it out, it only adds a new folder to your Dropbox account under `~/Dropbox/Apps/sprymesh`, so it is not going to wipe your hard drive :) But be warned this is pre alpha stuff and is very rough around the edges.
 
-This was very easy to implement, thanks to the awesome `:ets` from erlang.
-
-The following block of code forms most of the cache module:
-
-```elixir
-
-defmodule Cache do
-  @resource_tab :resource_cache
-
-  # client api
-  def filepath_for(subdomain, path) do
-    # lookup in cache
-    case cached_filepath_for(subdomain, path) do
-      {:ok, _, _} = found -> found
-      :not_found ->
-        # lookup in database
-        case Site.find_by_subdomain(subdomain) do
-          nil -> :not_found
-          site ->
-            debug("DB_HIT #{inspect url(subdomain, path)}")
-            cache_entries(site)
-            cached_filepath_for(subdomain, path)
-        end
-    end
-  end
-
-  defp cached_filepath_for(subdomain, path) do
-    case :ets.lookup(@resource_tab, url(subdomain, path)) do
-      [{_, content_hash}] ->
-        debug "CACHE_HIT #{inspect {subdomain, path}}"
-        {:ok, content_hash, ResourceStore.Store.path_for_content_hash(content_hash)}
-      [] ->
-        debug "CACHE_MISS #{inspect {subdomain, path}}"
-        :not_found
-    end
-  end
-
-  # ....
-
-  use GenServer
-  def start_link do
-    GenServer.start_link(__MODULE__, [])
-  end
-
-  def init(state) do
-    :ets.new(@resource_tab, [:named_table, {:write_concurrency, true}, {:read_concurrency, true}, :public])
-    {:ok, state}
-  end
-
-  # ...
-
-end
-
-```
-
-## 2. Serving pages performantly
-This too was very straight forward thanks to the awesome cowboy server.
-My phoenix app now has a second endpoint which is a plain plug and runs on a separate port from the main app.
-
-```elixir
-defmodule Danny.ResourceServer.Plug do
-  import Plug.Conn
-
-  def init(opts), do: opts
-
-  def call(conn, _opts) do
-    subdomain = subdomain conn
-    path = conn.request_path
-    case Cache.filepath_for(subdomain, path) do
-      :not_found ->
-        conn
-        |> put_resp_content_type("text/html")
-        |> send_resp(404, "<!doctype><h1>404 Not found</h1>")
-      {:ok, content_hash, content_path} ->
-        conn
-        |> put_resp_content_type(content_type_for_path(path))
-        |> put_resp_header("etag", content_hash)
-        |> send_file(200, content_path)
-    end
-  end
-
-  # ...
-end
-```
-
-This code uses `send_file` which should circumvent the file's bytes from even being read into the BEAM. Elixir never ceases to be fun. These two modules form the bulk of the webserver. Some quick benchmarking using wrk showed good results. However, putting this on a production server and benchmarking it properly is something I'll do in the future.
-
-This week should see the deployment of our initial prototype :) I am very excited about this :) I'd love to hear your feedback once a usable version is online :)
-
-*P.S I'd love to hear your thoughts on the features you would love to have in a web host which is synced using Dropbox*
+So, 3 good things in a day. I'll call it a success!
