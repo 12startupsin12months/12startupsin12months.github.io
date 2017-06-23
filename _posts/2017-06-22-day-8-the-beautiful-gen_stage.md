@@ -55,7 +55,7 @@ defmodule Q do
       {:empty, _} -> {Enum.reverse(acc), {q, n}}
       # however, if we do have elements, we can recursively call ourselves
       # after getting the first element from the queue
-      {{:value, job}, q} -> dq_jobs(q, n-1, [job | acc])
+      { {:value, job}, q} -> dq_jobs(q, n-1, [job | acc])
     end
   end
 
