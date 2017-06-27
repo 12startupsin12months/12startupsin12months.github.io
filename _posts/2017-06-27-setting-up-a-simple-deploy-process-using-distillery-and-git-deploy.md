@@ -45,15 +45,15 @@ Here are the steps to set it up for posterity.
 
  4. Add distillery to your deps
 
-     {:distillery, "~> 1.4"},
+        {:distillery, "~> 1.4"},
 
  5. Create a `rel/config.exs`
 
-     mix release.init
+        mix release.init
 
  5. Create a git tag with the value 'v1.0'. This is used to build an incrementing version number for our release.
 
-     git tag --annotate --message 'First version' v1.0
+        git tag --annotate --message 'First version' v1.0
 
  5. Tweak your mix.exs's version
 
@@ -157,3 +157,5 @@ Here are the steps to set it up for posterity.
         sudo su sprymesh
         ~/deploy/after_push
 
+The source for this is hosted at https://github.com/12startupsin12months/blog.12startupsin12months.in/blob/master/_posts/2017-06-27-setting-up-a-simple-deploy-process-using-distillery-and-git-deploy.md
+If you find an improvement, send a PR :)
