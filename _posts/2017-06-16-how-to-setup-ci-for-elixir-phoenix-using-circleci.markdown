@@ -3,6 +3,7 @@ layout: post
 title:  "How to setup CI for Elixir/Phoenix using circleci"
 date:   2017-06-16 22:49:00 +0530
 published: true
+comments: true
 categories:
   - circleci
   - ci

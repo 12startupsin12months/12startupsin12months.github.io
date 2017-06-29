@@ -3,6 +3,7 @@ layout: post
 title:  "Day 3: Technology and Architecture for codename danny"
 date:   2017-06-15 22:49:00 +0530
 published: true
+comments: true
 canonical_url: http://blog.12startupsin12months.in/2017/06/15/technology-and-architecture-for-codename-danny/
 categories:
   - technology

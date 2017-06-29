@@ -3,7 +3,9 @@ layout: post
 title: "Day 11 - Sunk costs and complexity"
 date:   2017-06-27
 published: true
-categories:
+comments: true
+canonical_url: http://blog.12startupsin12months.in/2017/06/27/day-11-sunk-costs-and-complexity/
+tags:
   - Complexity
   - Sunk Costs
 ---
@@ -30,3 +32,6 @@ git revert commit-id
 Anwyay, I am happy that at the end of the day. I don't have to support a cumbersome feature which doesn't add much value.
 
 I'd love for you guys to try out https://sprymesh.com/ which I build it out :) Please share your feedback :)
+
+- - -
+[Sunk costs and complexity was originally published on blog.12startups12months.com](http://blog.12startupsin12months.in/2017/06/27/day-11-sunk-costs-and-complexity/)

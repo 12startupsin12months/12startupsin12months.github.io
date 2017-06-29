@@ -3,6 +3,7 @@ layout: post
 title:  "Day 5: First working prototype of the webserver"
 date:   2017-06-19
 published: true
+comments: true
 categories:
   - Elixir
   - Retrospective

@@ -3,6 +3,7 @@ layout: post
 title:  "Day 6: Retrospective, Naming and Cache Invalidation"
 date:   2017-06-20
 published: true
+comments: true
 categories:
   - Elixir
   - Retrospective

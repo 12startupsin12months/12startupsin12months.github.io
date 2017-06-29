@@ -3,6 +3,7 @@ layout: post
 title:  "Day 8: The beautiful GenStage"
 date:   2017-06-22
 published: true
+comments: true
 categories:
   - Elixir
   - GenStage

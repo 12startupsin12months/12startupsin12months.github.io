@@ -3,6 +3,7 @@ layout: post
 title:  "Day 7: Some days you win, Some days you learn"
 date:   2017-06-21
 published: true
+comments: true
 categories:
   - Elixir
   - GenStage

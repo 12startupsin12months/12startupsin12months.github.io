@@ -3,6 +3,7 @@ layout: post
 title:  "Setting up a simple deploy process using distillery and git deploy"
 date:   2017-06-27
 published: true
+comments: true
 categories:
   - Elixir
   - Distiller

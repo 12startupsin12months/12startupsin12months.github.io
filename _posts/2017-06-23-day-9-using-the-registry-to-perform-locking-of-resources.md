@@ -3,6 +3,7 @@ layout: post
 title:  "Day 9: Using the Elixir Registry to perform locking of resources"
 date:   2017-06-22
 published: true
+comments: true
 categories:
   - Elixir
   - Registry
