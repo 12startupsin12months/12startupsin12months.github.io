@@ -4,7 +4,7 @@ title: "Day 14: sprymesh now stores all revisions of your website!"
 date:   2017-07-30
 published: true
 comments: true
-tags:
+categories:
   - Back on the horse
   - Consistent Motivation
   - Revisions

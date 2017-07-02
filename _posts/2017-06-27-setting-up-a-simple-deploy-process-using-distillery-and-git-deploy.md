@@ -133,6 +133,7 @@ Here are the steps to set it up for posterity.
  9. Reload the systemd scripts. Run the following commands:
 
         sudo systemctl daemon-reload
+        sudo systemctl enable sprymesh.service
 
  9. Push our code to the server. Push to prod
 

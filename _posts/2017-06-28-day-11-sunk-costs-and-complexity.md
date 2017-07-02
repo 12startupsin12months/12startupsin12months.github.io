@@ -5,7 +5,7 @@ date:   2017-06-27
 published: true
 comments: true
 canonical_url: http://blog.12startupsin12months.in/2017/06/27/day-11-sunk-costs-and-complexity/
-tags:
+categories:
   - Complexity
   - Sunk Costs
 ---
