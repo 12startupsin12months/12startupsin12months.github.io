@@ -32,6 +32,8 @@ layout: post
 title: "<%= title %>"
 date: <%= Time.now.strftime('%Y-%m-%d %H:%M:%S') %>
 comments: true
+canonical_url: "..."
+tags:
 categories:
   - monkey
 ---
