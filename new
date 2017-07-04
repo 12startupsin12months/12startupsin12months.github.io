@@ -31,6 +31,7 @@ __END__
 layout: post
 title: "<%= title %>"
 date: <%= Time.now.strftime('%Y-%m-%d %H:%M:%S') %>
+published: true
 comments: true
 canonical_url: "..."
 tags:
@@ -39,7 +40,9 @@ categories:
 ---
 
 Go ahead and write something awesome! You can do it!!!
+## Lessons, learnt
+## Useful links
+## Questions Encountered
 
 - - -
 P.S: I'd love to hear your feedback on [sprymesh which is a simple web host backed by Dropbox Synchronization](https://sprymesh.com)
-

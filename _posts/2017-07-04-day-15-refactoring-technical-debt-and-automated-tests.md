@@ -2,10 +2,10 @@
 layout: post
 title: "Day 15: Refactoring, Technical Debt and Automated Tests"
 date: 2017-07-04 17:48:36
+published: true
 comments: true
-canonical_url: "..."
+canonical_url: "http://blog.12startupsin12months.in/2017/07/04/day-15-refactoring-technical-debt-and-automated-tests/"
 tags:
-categories:
   - Refactoring
   - Technical Debt
   - Automated Tests
