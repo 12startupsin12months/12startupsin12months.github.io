@@ -9,6 +9,7 @@ categories:
   - Consistent Motivation
   - Revisions
 ---
+**Note: The published date on this post is screwed up! I don't want to change it as it would change the url :(**
 
 I lost Day 13 to my Analysis Paralysis and a lack of motivation. However, Today, I am back on the proverbial Horse!
 
